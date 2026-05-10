@@ -32,6 +32,6 @@ resource "azurerm_resource_group" "rgs1" {
   location = "Central India"
 
   tags = {
-    environment = "Development"
+    environment = "Staging"
   }
 }
