@@ -27,3 +27,11 @@ resource "azurerm_storage_container" "example" {
   storage_account_id = azurerm_storage_account.sta.id
 }
 
+resource "azurerm_resource_group" "rgs1" {
+  name     = "Flipkart-Dev"
+  location = "Central India"
+
+  tags = {
+    environment = "Development"
+  }
+}
