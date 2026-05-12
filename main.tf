@@ -42,3 +42,12 @@ resource azurerm_virtual_network "vnet" {
   location = azurerm_resource_group.rgs.location
   resource_group_name = azurerm_resource_group.rgs.name
 }
+
+resource "azurerm_resource_group" "rgs3" {
+  name     = "Flipkart-Dev3"
+  location = "Central India"
+
+  tags = {
+    environment = "testing"
+  }
+}
