@@ -15,7 +15,7 @@ resource "azurerm_storage_account" "sta" {
   location                 = azurerm_resource_group.rgs.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
-
+  allowed_copy_scope = "All"
   tags = {
     environment = "production"
   }
@@ -27,14 +27,6 @@ resource "azurerm_storage_container" "example" {
   storage_account_id = azurerm_storage_account.sta.id
 }
 
-resource "azurerm_resource_group" "rgs1" {
-  name     = "Flipkart-Dev"
-  location = "Central India"
-
-  tags = {
-    environment = "Staging"
-  }
-}
 
 resource azurerm_virtual_network "vnet" {
   name                = "flipkart-vnet"
